@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="black2">#232121</color>
+
+    <color name="blue1">#1668d0</color>
+    <color name="blue2">#4386f5</color>
+    <color name="blue3">#6ca9b2</color>
+    <color name="blue4">#0d8ced</color>
+
+    <color name="green1">#BAE9BA</color>
+    <color name="green2">#007300</color>
+
+    <color name="orange1">#FF7900</color>
+    <color name="orange2">#dd732a</color>
+
+    <color name="yellow1">#f9b346</color>
+    <color name="pink1">#94649c</color>
+    <color name="black1">#4d4d4d</color>
+    <color name="gray1">#abaaaa</color>
+    <color name="gray2">#868686</color>
+    <color name="gray3">#e3e3e3</color>
+    <color name="red1">#f12525</color>
+    <color name="red2">#ff3000</color>
+    <color name="red3">#ff3600</color>
+    <color name="red4">#e3271e</color>
+
+    <color name="text_color1">#92abca</color>
+    <color name="text_color2">#575757</color>
+
+
+    <color name="transparent">#00000000</color>
+
+    <color name="colorPrimaryRed">#FFCCBC</color>
+    <color name="colorPrimaryRedDark">#FF5722</color>
+
+    <color name="colorPrimaryDarkGrey">#263238</color>
+    <color name="colorPrimaryDarkGreyDark">#5f6669</color>
+    <color name="colorAccentDarkGrey">#FF5722</color>
+
+    <color name="colorPrimaryIndigo">#0C374D</color>
+    <color name="colorPrimaryIndigoDark">#093145</color>
+    <color name="colorAccentIndigo">#EBC944</color>
+
+    <color name="colorPrimaryMonochrome1">#2d2d2d</color>
+    <color name="colorPrimaryMonochrome1Dark">#080404</color>
+    <color name="colorAccentMonochrome1">#797979</color>
+
+    <color name="white">#FFF</color>
+    <color name="milky">#EEE</color>
+    <color name="black">#000</color>
+
+    <color name="textColor">#EEE</color>
+
+    <color name="gradient_center">#08afaa</color>
+    <color name="gradient_end">#045464</color>
+    <color name="gradient_start">#10ae96</color>
+
+</resources>

@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="all">
+        <item
+            android:id="@+id/location_menu"
+            android:title="@string/location"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/eshterak_menu"
+            android:title="@string/eshterak"
+            app:showAsAction="never" />
+    </group>
+
+</menu>
