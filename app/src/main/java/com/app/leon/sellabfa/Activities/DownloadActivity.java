@@ -1,12 +1,12 @@
 package com.app.leon.sellabfa.Activities;
 
 import android.content.Context;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.app.leon.sellabfa.BaseItem.BaseActivity;
 import com.app.leon.sellabfa.BuildConfig;
@@ -23,6 +23,7 @@ import com.app.leon.sellabfa.Utils.HttpClientWrapper;
 import com.app.leon.sellabfa.Utils.ICallback;
 import com.app.leon.sellabfa.Utils.NetworkHelper;
 import com.app.leon.sellabfa.Utils.SharedPreferenceManager;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 

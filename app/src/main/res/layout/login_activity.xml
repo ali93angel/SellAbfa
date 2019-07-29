@@ -35,8 +35,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/activity_mid_margin"
         android:layout_marginRight="@dimen/activity_mid_margin"
         android:gravity="bottom"
@@ -55,8 +55,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/activity_mid_margin"
         android:layout_marginRight="@dimen/activity_mid_margin"
         android:gravity="bottom"
@@ -67,9 +67,9 @@
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_large_margin"
             android:layout_marginLeft="@dimen/activity_large_margin"
             android:layout_marginRight="@dimen/activity_large_margin"
+            android:layout_marginBottom="@dimen/activity_large_margin"
             android:background="@drawable/border_blue_2"
             android:text="@string/login"
             android:textColor="@color/white"
@@ -87,8 +87,8 @@
             android:id="@+id/textViewFooter"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
             android:background="@color/gray3"
             android:gravity="center"
             android:text="@string/company_site"
@@ -98,8 +98,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/imageViewPerson"
+        android:layout_alignParentStart="true"
         android:layout_margin="@dimen/activity_mid_margin"
         android:foregroundGravity="center"
         android:gravity="center"
@@ -109,9 +109,9 @@
             android:id="@+id/linearLayoutUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_mid_margin"
             android:layout_marginLeft="@dimen/activity_large_margin"
             android:layout_marginRight="@dimen/activity_large_margin"
+            android:layout_marginBottom="@dimen/activity_mid_margin"
             android:background="@drawable/border_"
             android:orientation="horizontal">
 
@@ -138,9 +138,9 @@
             android:id="@+id/linearLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_mid_margin"
             android:layout_marginLeft="@dimen/activity_large_margin"
             android:layout_marginRight="@dimen/activity_large_margin"
+            android:layout_marginBottom="@dimen/activity_mid_margin"
             android:background="@drawable/border_"
             android:orientation="horizontal">
 

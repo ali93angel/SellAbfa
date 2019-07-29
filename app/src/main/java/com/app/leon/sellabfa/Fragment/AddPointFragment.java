@@ -2,7 +2,6 @@ package com.app.leon.sellabfa.Fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +11,8 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.fragment.app.DialogFragment;
 
 import com.app.leon.sellabfa.Activities.LocationActivity_1;
 import com.app.leon.sellabfa.Models.Enums.SharedReferenceKeys;
@@ -38,6 +39,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class AddPointFragment extends DialogFragment {
+    private static final String ARG_PARAM1 = "param1";
     Unbinder unbinder;
     Context context;
     View view;
@@ -71,9 +73,6 @@ public class AddPointFragment extends DialogFragment {
     LinearLayout linearLayout5;
     @BindView(R.id.linearLayout6)
     LinearLayout linearLayout6;
-
-    private static final String ARG_PARAM1 = "param1";
-
     // TODO: Rename and change types of parameters
     private String eshterak;
     private Point mapPoint;
@@ -335,7 +334,7 @@ public class AddPointFragment extends DialogFragment {
                 if (editText1.getText().toString().length() > 0 && editText2.getText().toString().length() > 0 &&
                         editText3.getText().toString().length() > 0 && editText4.getText().toString().length() > 0 &&
                         editText5.getText().toString().length() > 0 && editText6.getText().toString().length() > 0
-                        ) {
+                ) {
                     addCounterFeature();
                     dismiss();
                 } else {

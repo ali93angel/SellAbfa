@@ -18,9 +18,6 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class ReadFragment extends BaseFragment {
-    private OnLoad onLoad;
-    private Context context;
-    private View view, viewFocus;
     @BindView(R.id.textViewAbBaha)
     TextView textViewAbBaha;
     @BindView(R.id.textViewMasraf)
@@ -45,6 +42,9 @@ public class ReadFragment extends BaseFragment {
     TextView textViewForoush;
     int select;
     Unbinder unbinder;
+    private OnLoad onLoad;
+    private Context context;
+    private View view, viewFocus;
 
     public ReadFragment() {
 

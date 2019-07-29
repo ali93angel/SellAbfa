@@ -78,12 +78,11 @@ import butterknife.ButterKnife;
 public class LocationActivity extends BaseActivity
         implements ICallback<String> {
 
+    private final double SCALE = 700;
     Context context;
     SharedPreferenceManager sharedPreferenceManager;
     String customId;
     OnLoad onLoad;
-    private android.location.Location lastLocation;
-    private IGeoTracker geoTracker;
     @BindView(R.id.baseMapSpinner)
     Spinner mBaseMapSpinner;
     @BindView(R.id.mapViewLayout)
@@ -92,6 +91,13 @@ public class LocationActivity extends BaseActivity
     SearchView searchView;
     @BindView(R.id.progressBarMapLoading)
     ProgressBar progressBarMapLoading;
+    LinearLayout confirmWrapper, addOrCancel;
+    EditText d1, d2, l1, l2, r1, r2;
+    Button cancel, ok, addCounter, cancelSelect;
+    Point mapPoint = null;
+    String eshterak;
+    private android.location.Location lastLocation;
+    private IGeoTracker geoTracker;
     private LocationDisplay mLocationDisplay;
     private ArcGISMap map;
     //private Basemap openStreetBasemap;
@@ -102,13 +108,7 @@ public class LocationActivity extends BaseActivity
     private FeatureLayer counterLayer, parcelLayerGolestan;
     private ServiceFeatureTable counterFeatureTable, parcelFeatureTableGolestan;
     private ArcGISFeature counterIdentifiedFeature, parcelIdentifiedFeatureGolestan;
-    LinearLayout confirmWrapper, addOrCancel;
-    EditText d1, d2, l1, l2, r1, r2;
-    Button cancel, ok, addCounter, cancelSelect;
-    Point mapPoint = null;
     private boolean isCounterFeatureSelected = false, isGolestanParcelSelected;
-    private final double SCALE = 700;
-    String eshterak;
 
     @Override
     protected UiElementInActivity getUiElementsInActivity() {
@@ -521,7 +521,7 @@ public class LocationActivity extends BaseActivity
                     // if dealing with ServiceFeatureTable, apply edits after making updates; if editing locally, then edits can
                     // be synchronized at some point using the SyncGeodatabaseTask.
                     if (counterFeatureTable instanceof ServiceFeatureTable) {
-                        ServiceFeatureTable serviceFeatureTable = (ServiceFeatureTable) counterFeatureTable;
+                        ServiceFeatureTable serviceFeatureTable = counterFeatureTable;
                         // apply the edits
                         final ListenableFuture<List<FeatureEditResult>> applyEditsFuture = serviceFeatureTable.applyEditsAsync();
                         applyEditsFuture.addDoneListener(new Runnable() {

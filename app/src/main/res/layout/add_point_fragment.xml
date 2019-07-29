@@ -62,11 +62,11 @@
                     android:inputType="number"
                     android:maxLength="2"
                     android:maxLines="1"
-                    android:nextFocusDown="@+id/editText1"
-                    android:nextFocusForward="@+id/editText1"
                     android:nextFocusLeft="@+id/editText1"
                     android:nextFocusRight="@+id/editText1"
                     android:nextFocusUp="@+id/editText1"
+                    android:nextFocusDown="@+id/editText1"
+                    android:nextFocusForward="@+id/editText1"
                     android:padding="@dimen/activity_medium_padding" />
             </LinearLayout>
 
@@ -95,11 +95,11 @@
                     android:inputType="number"
                     android:maxLength="2"
                     android:maxLines="1"
-                    android:nextFocusDown="@+id/editText4"
-                    android:nextFocusForward="@+id/editText4"
                     android:nextFocusLeft="@+id/editText4"
                     android:nextFocusRight="@+id/editText4"
                     android:nextFocusUp="@+id/editText4"
+                    android:nextFocusDown="@+id/editText4"
+                    android:nextFocusForward="@+id/editText4"
                     android:padding="@dimen/activity_medium_padding" />
             </LinearLayout>
 
@@ -145,11 +145,11 @@
                     android:inputType="number"
                     android:maxLength="2"
                     android:maxLines="1"
-                    android:nextFocusDown="@+id/editText3"
-                    android:nextFocusForward="@+id/editText3"
                     android:nextFocusLeft="@+id/editText3"
                     android:nextFocusRight="@+id/editText3"
                     android:nextFocusUp="@+id/editText3"
+                    android:nextFocusDown="@+id/editText3"
+                    android:nextFocusForward="@+id/editText3"
                     android:padding="@dimen/activity_medium_padding" />
             </LinearLayout>
 
@@ -175,14 +175,14 @@
                     android:background="@drawable/border_gray_2"
                     android:gravity="center"
                     android:hint="cm"
-                    android:nextFocusDown="@+id/editText6"
-                    android:nextFocusForward="@+id/editText6"
-                    android:nextFocusLeft="@+id/editText6"
-                    android:nextFocusRight="@+id/editText6"
-                    android:nextFocusUp="@+id/editText6"
                     android:inputType="number"
                     android:maxLength="2"
                     android:maxLines="1"
+                    android:nextFocusLeft="@+id/editText6"
+                    android:nextFocusRight="@+id/editText6"
+                    android:nextFocusUp="@+id/editText6"
+                    android:nextFocusDown="@+id/editText6"
+                    android:nextFocusForward="@+id/editText6"
                     android:padding="@dimen/activity_medium_padding" />
             </LinearLayout>
         </LinearLayout>
@@ -226,11 +226,11 @@
                     android:inputType="number"
                     android:maxLength="2"
                     android:maxLines="1"
-                    android:nextFocusDown="@+id/editText5"
-                    android:nextFocusForward="@+id/editText5"
                     android:nextFocusLeft="@+id/editText5"
                     android:nextFocusRight="@+id/editText5"
                     android:nextFocusUp="@+id/editText5"
+                    android:nextFocusDown="@+id/editText5"
+                    android:nextFocusForward="@+id/editText5"
                     android:padding="@dimen/activity_medium_padding" />
             </LinearLayout>
 
@@ -275,10 +275,10 @@
                 style="@style/text_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_medium_margin"
                 android:layout_marginLeft="@dimen/activity_large_margin"
-                android:layout_marginRight="@dimen/activity_medium_margin"
                 android:layout_marginTop="@dimen/activity_medium_margin"
+                android:layout_marginRight="@dimen/activity_medium_margin"
+                android:layout_marginBottom="@dimen/activity_medium_margin"
                 android:layout_weight="1"
                 android:background="@drawable/border_red_2"
                 android:gravity="center"
@@ -291,10 +291,10 @@
                 style="@style/text_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_medium_margin"
                 android:layout_marginLeft="@dimen/activity_mid_margin"
-                android:layout_marginRight="@dimen/activity_large_margin"
                 android:layout_marginTop="@dimen/activity_medium_margin"
+                android:layout_marginRight="@dimen/activity_large_margin"
+                android:layout_marginBottom="@dimen/activity_medium_margin"
                 android:layout_weight="1"
                 android:background="@drawable/border_green_2"
                 android:gravity="center"

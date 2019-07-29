@@ -1,7 +1,8 @@
 package com.app.leon.sellabfa.Utils;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by Leon on 12/20/2017.

@@ -1,12 +1,13 @@
 package com.app.leon.sellabfa.Utils;
 
 import android.content.Context;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 
 import com.app.leon.sellabfa.R;
 

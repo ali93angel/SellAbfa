@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -18,6 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.app.leon.sellabfa.Infrastructure.DifferentCompanyManager;
 import com.app.leon.sellabfa.Infrastructure.IAbfaService;
@@ -301,19 +302,13 @@ public class LoginActivity extends AppCompatActivity {
         if (token.length() < 20) {
             return false;
         }
-        if (sharedPreferenceManager.getStringData(SharedReferenceKeys.REFRESH_TOKEN.getValue()).length() < 20) {
-            return false;
-        }
-        return true;
+        return sharedPreferenceManager.getStringData(SharedReferenceKeys.REFRESH_TOKEN.getValue()).length() >= 20;
     }
 
     private boolean checkLastCredential(String enteredUsername, String enteredPassword) {
         String username = sharedPreferenceManager.getStringData(SharedReferenceKeys.USERNAME.getValue());
         String password = Crypto.decrypt(sharedPreferenceManager.getStringData(SharedReferenceKeys.PASSWORD.getValue()));
-        if (username.equals(enteredUsername) && password.equals(enteredPassword)) {
-            return true;
-        }
-        return false;
+        return username.equals(enteredUsername) && password.equals(enteredPassword);
     }
 
     @Override
@@ -360,7 +355,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), getString(R.string.error_is_not_match), Toast.LENGTH_SHORT).show();
             } else {
                 sharedPreferenceManager.putData(SharedReferenceKeys.TOKEN.getValue(), loginFeedBack.getAccess_token());
-                Log.e("token",loginFeedBack.getAccess_token());
+                Log.e("token", loginFeedBack.getAccess_token());
                 sharedPreferenceManager.putData(SharedReferenceKeys.REFRESH_TOKEN.getValue(), loginFeedBack.getRefresh_token());
                 sharedPreferenceManager.putData(SharedReferenceKeys.USERNAME.getValue(), username);
                 sharedPreferenceManager.putData(SharedReferenceKeys.PASSWORD.getValue(), Crypto.encrypt(password));

@@ -1,21 +1,22 @@
 package com.app.leon.sellabfa.Activities;
 
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 
 import com.app.leon.sellabfa.Adapters.ViewPagerAdapterRead;
 import com.app.leon.sellabfa.BaseItem.BaseActivity;
@@ -27,6 +28,7 @@ import com.app.leon.sellabfa.Models.ViewModels.UiElementInActivity;
 import com.app.leon.sellabfa.R;
 import com.app.leon.sellabfa.Utils.FontManager;
 import com.app.leon.sellabfa.Utils.SharedPreferenceManager;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -34,15 +36,18 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ReadActivity extends BaseActivity {
+    private static ReadActivity instance;
     @BindView(R.id.viewPagerRead)
     public ViewPager viewPager;
-    private ViewPagerAdapterRead viewPagerAdapterRead;
-    private ArrayList<OnLoad> onLoads;
     SharedPreferenceManager sharedPreferenceManager;
     int select = 0;
     int pageNumber = 0;
+    private ViewPagerAdapterRead viewPagerAdapterRead;
+    private ArrayList<OnLoad> onLoads;
 
-    private static ReadActivity instance;
+    public static ReadActivity getInstance() {
+        return instance;
+    }
 
     @Override
     protected UiElementInActivity getUiElementsInActivity() {
@@ -65,40 +70,6 @@ public class ReadActivity extends BaseActivity {
     protected void initialize() {
         ButterKnife.bind(this);
         new FillReadFragment(this).execute();
-    }
-
-    class FillReadFragment extends AsyncTask<String, String, String> {
-        ProgressDialog progressDialog;
-        Context context;
-
-        FillReadFragment(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            onLoads = (ArrayList<OnLoad>) OnLoad.listAll(OnLoad.class);
-            if (onLoads != null && onLoads.size() > 0) {
-                viewPagerAdapterRead = new ViewPagerAdapterRead(getSupportFragmentManager(), context, onLoads, select);
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            progressDialog = new ProgressDialog(context);
-            progressDialog.show();
-            progressDialog.setCancelable(false);
-            super.onPreExecute();
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            viewPager.setAdapter(viewPagerAdapterRead);
-            viewPager.setCurrentItem(pageNumber);
-            progressDialog.dismiss();
-            super.onPostExecute(s);
-        }
     }
 
     @Override
@@ -171,7 +142,37 @@ public class ReadActivity extends BaseActivity {
         return onLoads;
     }
 
-    public static ReadActivity getInstance() {
-        return instance;
+    class FillReadFragment extends AsyncTask<String, String, String> {
+        ProgressDialog progressDialog;
+        Context context;
+
+        FillReadFragment(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            onLoads = (ArrayList<OnLoad>) OnLoad.listAll(OnLoad.class);
+            if (onLoads != null && onLoads.size() > 0) {
+                viewPagerAdapterRead = new ViewPagerAdapterRead(getSupportFragmentManager(), context, onLoads, select);
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog = new ProgressDialog(context);
+            progressDialog.show();
+            progressDialog.setCancelable(false);
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            viewPager.setAdapter(viewPagerAdapterRead);
+            viewPager.setCurrentItem(pageNumber);
+            progressDialog.dismiss();
+            super.onPostExecute(s);
+        }
     }
 }

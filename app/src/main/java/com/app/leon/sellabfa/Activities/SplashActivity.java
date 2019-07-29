@@ -2,10 +2,11 @@ package com.app.leon.sellabfa.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.leon.sellabfa.R;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -26,10 +27,10 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.splash_activity);
-        ButterKnife.bind(this);
+//        setContentView(R.layout.splash_activity);
         if (!splashLoaded) {
             setContentView(R.layout.splash_activity);
+            ButterKnife.bind(this);
             initialize();
             startSplash();//TODO 30 27 67
         } else {
@@ -46,12 +47,12 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void startSplash() {
-        container.setRepeatCount(0);
-        container.setDuration(2800);
-        container.setBaseAlpha(0.5f);
-        container.setAutoStart(false);
-        container.setIntensity(1);
-        container.startShimmerAnimation();
+//        container.setRepeatCount(0);
+//        container.setDuration(2800);
+//        container.setBaseAlpha(0.5f);
+//        container.setAutoStart(false);
+//        container.setIntensity(1);
+//        container.startShimmerAnimation();
         Thread timerThread = new Thread() {
             public void run() {
                 try {

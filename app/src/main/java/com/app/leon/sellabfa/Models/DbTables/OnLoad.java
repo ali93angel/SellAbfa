@@ -7,6 +7,15 @@ import com.app.leon.sellabfa.Models.InterCommunation.OnLoadParams;
 import com.orm.SugarRecord;
 
 public class OnLoad extends SugarRecord implements Parcelable {
+    public static final Parcelable.Creator<OnLoad> CREATOR = new Parcelable.Creator<OnLoad>() {
+        public OnLoad createFromParcel(Parcel in) {
+            return new OnLoad(in);
+        }
+
+        public OnLoad[] newArray(int size) {
+            return new OnLoad[size];
+        }
+    };
     public String idCustom;
     public String zone;
     public int trackNumber;
@@ -49,6 +58,7 @@ public class OnLoad extends SugarRecord implements Parcelable {
     public OnLoad(OnLoadParams onLoad) {
         setOnLoad(onLoad);
     }
+
     private OnLoad(Parcel parcel) {
         eshterak = parcel.readString();
     }
@@ -88,7 +98,6 @@ public class OnLoad extends SugarRecord implements Parcelable {
         karbariMasraf = onLoad.karbariMasraf;
     }
 
-
     public String getSifoonQotrCustom() {
         if (sifoonQotr == null || sifoonQotr > 3)
             return "";
@@ -108,14 +117,4 @@ public class OnLoad extends SugarRecord implements Parcelable {
         parcel.writeString(sureName);
         parcel.writeString(address);
     }
-
-    public static final Parcelable.Creator<OnLoad> CREATOR = new Parcelable.Creator<OnLoad>() {
-        public OnLoad createFromParcel(Parcel in) {
-            return new OnLoad(in);
-        }
-
-        public OnLoad[] newArray(int size) {
-            return new OnLoad[size];
-        }
-    };
 }

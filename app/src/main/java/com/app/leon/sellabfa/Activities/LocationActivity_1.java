@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.nfc.Tag;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,6 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.app.leon.sellabfa.Adapters.SpinnerGisAdapter;
 import com.app.leon.sellabfa.Fragment.AddPointFragment;
@@ -59,12 +60,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LocationActivity_1 extends AppCompatActivity {
+    private final double SCALE = 700;
     Context context;
     SharedPreferenceManager sharedPreferenceManager;
     String customId;
     OnLoad onLoad;
-    private android.location.Location lastLocation;
-    private IGeoTracker geoTracker;
     @BindView(R.id.searchView)
     SearchView searchView;
     @BindView(R.id.baseMapSpinner)
@@ -77,6 +77,12 @@ public class LocationActivity_1 extends AppCompatActivity {
     Button buttonNext;
     @BindView(R.id.buttonPrevious)
     Button buttonPrevious;
+    Point mapPoint = null;
+    String eshterak;
+    ArrayList<OnLoad> onLoads;
+    int currentPage;
+    private android.location.Location lastLocation;
+    private IGeoTracker geoTracker;
     private LocationDisplay mLocationDisplay;
     private ArcGISMap map;
     //private Basemap openStreetBasemap;
@@ -87,12 +93,7 @@ public class LocationActivity_1 extends AppCompatActivity {
     private FeatureLayer counterLayer;
     private ServiceFeatureTable counterFeatureTable, parcelFeatureTableGolestan;
     private ArcGISFeature counterIdentifiedFeature, parcelIdentifiedFeatureGolestan;
-    Point mapPoint = null;
     private boolean isCounterFeatureSelected = false, isGolestanParcelSelected;
-    private final double SCALE = 700;
-    String eshterak;
-    ArrayList<OnLoad> onLoads;
-    int currentPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,12 +2,13 @@ package com.app.leon.sellabfa.Adapters;
 
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.app.leon.sellabfa.Fragment.ReadFragment;
 import com.app.leon.sellabfa.Models.DbTables.OnLoad;
@@ -15,10 +16,10 @@ import com.app.leon.sellabfa.Models.DbTables.OnLoad;
 import java.util.List;
 
 public class ViewPagerAdapterRead extends FragmentStatePagerAdapter {
+    int select;
     private LayoutInflater inflater;
     private Context context;
     private List<OnLoad> onLoads;
-    int select;
 
     public ViewPagerAdapterRead(FragmentManager fragmentManager, Context context, List<OnLoad> onLoads, int select) {
         super(fragmentManager);

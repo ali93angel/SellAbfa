@@ -6,7 +6,8 @@ package com.app.leon.sellabfa.Infrastructure;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.support.multidex.MultiDex;
+
+import androidx.multidex.MultiDex;
 
 import com.orm.SchemaGenerator;
 import com.orm.SugarApp;

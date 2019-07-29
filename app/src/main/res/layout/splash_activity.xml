@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_background"
-    tools:context=".Activities.SplashActivity">
+    android:orientation="vertical"
+    tools:context="com.app.leon.sellabfa.Activities.SplashActivity">
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_view_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center"
         android:foregroundGravity="center_horizontal|center_vertical">
@@ -27,37 +27,37 @@
             android:src="@drawable/img_splash" />
     </com.facebook.shimmer.ShimmerFrameLayout>
 
-    <android.support.v7.widget.LinearLayoutCompat
-
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:foregroundGravity="center"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:background="@color/gray2"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/app_version"
                 android:textColor="@color/orange2" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/gray2"
                 android:gravity="center"
                 android:text="@string/copy_right"
                 android:textColor="@color/white" />
         </LinearLayout>
-    </android.support.v7.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>
